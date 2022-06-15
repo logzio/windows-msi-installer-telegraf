@@ -1,6 +1,10 @@
+## Telegraf Windows Packager
+
+This project houses the windows install package for [Telegraf](https://github.com/influxdb/telegraf) version of 1.22.4, to send metrics to logz.io platform.
+
 # Windows Package Manager
 
-This project houses the windows install package for [Telegraf](https://github.com/influxdb/telegraf) to send metrics to logz.io platform
+This project uses the [Wix Toolset](http://wixtoolset.org/) to generate a windows msi installer. The core of WiX is a set of build tools that build Windows Installer packages using the same build concepts as the rest of your product: source code is compiled and then linked to create executables; in this case .exe setup bundles, .msi installation packages, .msm merge modules, and .msp patches. The WiX command-line build tools work with any automated build system. Also, MSBuild is supported from the command line, Visual Studio, and Team Build.
 
 ### GUID
 
@@ -11,13 +15,11 @@ Inside a file `telegraf.wxs` you need to replace with unique GUID(you will see p
 
 NOTE: You have to uppercase the GUID's that this site generates to be fully compatible with the installer.
 
-## Telegraf Windows Packager
-
-This project uses the [Wix Toolset](http://wixtoolset.org/) to generate a windows msi installer.
-
 ### Generating the MSI
 
-First, we need to use candle to create our intermmediate object that will turn into an msi file.
+Need to unzip `telegraf.zip` that archive contains telegraf collector.
+
+We need to use candle to create our intermmediate object that will turn into an msi file.
 
 ```
 candle.exe -nologo telegraf.wxs -out telegraf.wixobj
