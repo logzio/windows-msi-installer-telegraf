@@ -28,6 +28,8 @@ This project contains a Windows Installer package to install [Telegraf](https://
 
 `git clone https://github.com/logzio/windows-msi-installer-telegraf.git .`
 
+**NOTE:** This project uses Telegraf version 1.22.4. If you need to use a different version
+
 ![Clone Repo](/img/step5clone.png)
 
 2. Unzip `telegraf.zip` 
