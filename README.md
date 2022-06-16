@@ -28,7 +28,14 @@ This project contains a Windows Installer package to install [Telegraf](https://
 
 `git clone https://github.com/logzio/windows-msi-installer-telegraf.git .`
 
-**NOTE:** This project uses Telegraf version 1.22.4. If you need to use a different version
+**NOTE:** This project uses Telegraf version 1.22.4. If you need to use a different version, run the followinf command:
+
+```shell
+> wget https://dl.influxdata.com/telegraf/releases/telegraf-<<VERSION>>_windows_amd64.zip -UseBasicParsing -OutFile telegraf-_windows_amd64.zip
+> Expand-Archive .\telegraf-<<VERSION>>_windows_amd64.zip -DestinationPath 'C:\Program Files\InfluxData\telegraf\'
+```
+
+Replace `<<VERSION>>` with the required version number.
 
 ![Clone Repo](/img/step5clone.png)
 
