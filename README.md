@@ -1,63 +1,73 @@
 # Telegraf Windows Packager
 
-This project contains a Windows Installer package to install [Telegraf](https://github.com/influxdb/telegraf) that is configured to send metrics to the Logz.io platform.
-
-## Windows Package Manager
-
-This project uses the [WiX Toolset](http://wixtoolset.org/) to generate a Windows MSI installer. The core of WiX is a set of tools that build Windows Installer packages using the same build concepts as the rest of your product: source code is compiled and then linked to create executables; in this case .exe setup bundles, .msi installation packages, .msm merge modules, and .msp patches. The WiX command-line build tools work with any automated build system. Also, MSBuild is supported from the command line, Visual Studio, and Team Build.
+This project contains a Windows Installer package to install [Telegraf](https://github.com/influxdb/telegraf) that is configured to send metrics to the Logz.io platform. This integration uses the [WiX Toolset](http://wixtoolset.org/) to generate a Windows MSI installer.
 
 ## Setup
 
 ###   1. Download and install [Wix Toolset](http://wixtoolset.org/)
 
 1. Go to [Wix Toolset Downloads](https://wixtoolset.org/releases/)
+
 ![Wix Toolset Downloads](/img/step1.png)
 
 2. Click `Download` to go to the github [releases page](https://github.com/wixtoolset/wix3/releases/tag/wix3112rtm) of project
+
 ![Wix Toolset Downloads](/img/step2.png)
 
 3. Run `winx311.exe` file
+
 ![Wix Toolset Install](/img/step4.png)
 
 4. Click `Install`
+
 ![Wix Toolset Install Complete](/img/step4finished.png)
 
 ###  Clone github repository
 
 1. Clone repository to your local folder
+
 `git clone https://github.com/logzio/windows-msi-installer-telegraf.git .`
 
 ![Clone Repo](/img/step5clone.png)
 
 2. Unzip `telegraf.zip` 
+
 ![Unzip](/img/step6unzip.png)
 
 ### Use WiX toolset
 
 1. Go to `Program Files` and open the WiX folder `Wix Toolset v3.11`, then open `bin` folder
+
 ![WiX folder](/img/7listof.png)
 
 We need 2 files: `candle.exe` and `light.exe`
 
 2. Open command line and go to your project folder
+
 ![Commandline](/img/7goto.png)
 
 3. Drag `candle.exe` into the command line to generate the path to the `candle.exe`
 
 At the end of the generated path, add:
-`-nologo telegraf.wxs -out telegraf.wixobj` and click `Enter`
+
+`-nologo telegraf.wxs -out telegraf.wixobj` and press `Enter`
+
 ![Clone Repo](/img/9drag-candle.png)
 
 5. A new file `telegraf.wixobj` will appear in your project folder
+
 ![Run candle.exe](/img/9finish.png)
 
 6. Drag `light.exe` into command line to generate the path to the `light.exe`
 
 At the end of the generated path, add:
-`-nologo telegraf.wixobj -out telegraf.msi` and click `Enter`
+
+`-nologo telegraf.wixobj -out telegraf.msi` and press `Enter`
+
 ![Run light.exe](/img/10start.png)
 
 7. A new file `telegraf.msi` will appear in your project folder
+
 ![Run light.exe](/img/10finish.png)
 
 MSI installer is now ready.
