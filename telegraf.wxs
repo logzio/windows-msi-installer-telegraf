@@ -23,6 +23,9 @@
 						<Component Id="BuildFile" Guid="6637349e-d542-41c8-8d55-61ce36a8cc09" Win64="yes">
 							<File Id="BuildFileCONF" Name="build-ms.bat" DiskId="1" Source="build-ms.bat" KeyPath="yes"/>
 						</Component>
+						<Component Id="ConfDefault" Guid="03eed56f-d676-4779-8f71-581af9857c59" Win64="yes">
+							<File Id="ConfDefailtFile" Name="telegraf.conf" DiskId="1" Source="telegraf.conf" KeyPath="yes"/>
+						</Component>
 						<Component Id="LogzIoTokenRegistryEntry" Guid="bac82257-738c-4131-af70-4107ab60806a" Win64="yes">
 							<RegistryKey Root="HKLM" Key="SYSTEM\ControlSet001\Control\Session Manager\Environment">
 								<RegistryValue Type="string" Name="LOGZIO_TOKEN" Value="[LOGZIOTOKEN]" KeyPath="yes"/>
@@ -66,6 +69,7 @@
 		<Feature Id="Complete" Level="1">
 			<ComponentRef Id="MainExecutable"/>
 			<ComponentRef Id="BuildFile" />
+			<ComponentRef Id="ConfDefault" />
 			<ComponentRef Id="LogzIoTokenRegistryEntry"/>
 			<ComponentRef Id="LogzIoListenerRegistryEntry"/>
 		</Feature>

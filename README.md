@@ -4,7 +4,7 @@ This project contains a Windows Installer package to install [Telegraf](https://
 
 ## Setup
 
-###   1. Download and install [Wix Toolset](http://wixtoolset.org/)
+### 1. Download and install [Wix Toolset](http://wixtoolset.org/)
 
 1. Go to [Wix Toolset Downloads](https://wixtoolset.org/releases/)
 
@@ -22,7 +22,7 @@ This project contains a Windows Installer package to install [Telegraf](https://
 
 ![Wix Toolset Install Complete](/img/step4finished.png)
 
-###  Clone github repository
+### Clone github repository
 
 1. Clone repository to your local folder
 
@@ -39,7 +39,7 @@ Replace `<<VERSION>>` with the required version number.
 
 ![Clone Repo](/img/step5clone.png)
 
-2. Unzip `telegraf.zip` 
+2. Unzip `telegraf.zip`
 
 ![Unzip](/img/step6unzip.png)
 
@@ -83,6 +83,8 @@ MSI installer is now ready.
 
 ## Install Telegraf Collector and send metrics to Logz.io.
 
+That msi installer only runs in **_silent mode_**.
+
 Run the following command:
 
 ```
@@ -93,10 +95,10 @@ Replace the variables indicated between `<<>>` as per the table below:
 
 ##### Parameters
 
-| Parameter                                              | Description                                                                                                                               |
-| ------------------------------------------------------ | ----------------------------------------------------------------------------------------------------------------------------------------- |
+| Parameter         | Description                                                                                                                               |
+| ----------------- | ----------------------------------------------------------------------------------------------------------------------------------------- |
 | LOGZIO_TOKEN      | Your Logz.io account [token](<(https://app.logz.io/#/dashboard/settings/general)>).                                                       |
-| LOGZIO_LISTENER  | Logz.io [listener URL](https://docs.logz.io/user-guide/accounts/account-region.html) to ship the logs to (for example, listener.logz.io). |
+| LOGZIO_LISTENER   | Logz.io [listener URL](https://docs.logz.io/user-guide/accounts/account-region.html) to ship the logs to (for example, listener.logz.io). |
 | INSTALL_DIRECTION | The folder alias of the predefined product installation folder.                                                                           |
 
 ### Check Logz.io for your metrics
